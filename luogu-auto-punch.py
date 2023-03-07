@@ -27,5 +27,5 @@ if __name__ == "__main__":
                 print('code =', tmp['code'], 'message =', tmp['more']['html'])
             else:
                 print('code =', tmp['code'], 'message =', tmp['message'])
-        except:
-            print('Error: Can\'t decode JSON response')
+        except Exception as err:
+            traceback.print_exc()

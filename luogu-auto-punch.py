@@ -20,7 +20,7 @@ if __name__ == "__main__":
     print(f"Script Name: {sys.argv[0]}")
     for i in range(1, len(sys.argv)):
         response = punch(sys.argv[i])
-        print(f"No. {i}: {response}")
+        print(f"No. {i}:")
         try:
             tmp = json.loads(response)
             if tmp['code'] == 200:

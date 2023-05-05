@@ -22,7 +22,7 @@ if __name__ == "__main__":
         if sys.argv[i][-1] != '*':
             print(f"Cookie: {sys.argv[i]}")
         response = punch(sys.argv[i])
-        print(f"No. {i}: {response}")
+        print(f"No. {i}:")
         try:
             tmp = json.loads(response)
             if tmp['code'] == 200:

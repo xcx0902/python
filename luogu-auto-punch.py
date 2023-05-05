@@ -26,6 +26,7 @@ if __name__ == "__main__":
         response = punch(sys.argv[i])
         print(f"No. {i}:")
         try:
+            print(response)
             tmp = json.loads(response)
             if tmp['code'] == 200:
                 print('code =', tmp['code'], 'message =', tmp['more']['html'])

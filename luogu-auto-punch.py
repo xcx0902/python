@@ -22,7 +22,8 @@ if __name__ == "__main__":
     print(f"Script Name: {sys.argv[0]}")
     for i in range(1, len(sys.argv)):
         if sys.argv[i][-1] != '*':
-            print(f"Cookie: {sys.argv[i]}")
+            print(f"Cookie: {sys.argv[i][:-1]}")
+            print(sys.argv[i][-1])
         response = punch(sys.argv[i])
         print(f"No. {i}:")
         try:

@@ -5,16 +5,22 @@ import json
 import sys
 
 def punch(cookie):
-    return requests.post('https://www.luogu.com.cn/index/ajax_punch', headers={
-        "Host": "www.luogu.com.cn",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv: 73.0) Gecko/20100101 Firefox/73.0",
-        "Accept": "*/*",
-        "Accept-Language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Connection": "keep-alive",
-        "Referer": "https://www.luogu.com.cn/",
-        "Cache-Control": "no-cache",
-        "TE": "Trailers",
+    return requests.post('https://www.luogu.com.cn/index/ajax_punch', headers = {
+        'accept': '*/*',
+        'accept-language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+        'content-length': '0',
+        'origin': 'https://www.luogu.com.cn',
+        'priority': 'u=1, i',
+        'referer': 'https://www.luogu.com.cn/',
+        'sec-ch-ua': '"Google Chrome";v="147", "Not.A/Brand";v="8", "Chromium";v="147"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"macOS"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36',
+        'x-csrf-token': '1777541137:QXL7WBvmc+RuDypGip7ZofXe58P82c6BEk6KqHZbciY=',
+        'x-requested-with': 'XMLHttpRequest',
         "Cookie": cookie
     }).text
 
@@ -22,7 +28,7 @@ if __name__ == "__main__":
     print(f"Script Name: {sys.argv[0]}")
     for i in range(1, len(sys.argv)):
         response = punch(sys.argv[i])
-        print(f"No. {i}:")
+        print(f"No. {i}: {sys.argv[i]}")
         try:
             print(response)
             tmp = json.loads(response)

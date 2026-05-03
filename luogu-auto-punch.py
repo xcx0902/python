@@ -25,6 +25,7 @@ def GetCSRF(cookie):
     print(content)
     soup = BeautifulSoup(content, 'html.parser')
     token = soup.find('meta', {'name': 'csrf-token'})['content']
+    print(token)
     return token
 
 def punch(cookie):

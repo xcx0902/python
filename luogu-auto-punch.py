@@ -52,7 +52,7 @@ if __name__ == "__main__":
     print(f"Script Name: {sys.argv[0]}")
     for i in range(1, len(sys.argv)):
         response = punch(sys.argv[i])
-        print(f"No. {i}: {sys.argv[i]}")
+        print(f"No. {i}: {sys.argv[i]} {len(sys.argv[i])} {sys.argv[i][-5:]}")
         try:
             print(response)
             tmp = json.loads(response)

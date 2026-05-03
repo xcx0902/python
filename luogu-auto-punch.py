@@ -22,6 +22,7 @@ def GetCSRF(cookie):
         'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36',
         "Cookie": cookie
     }).text
+    print(content)
     soup = BeautifulSoup(content, 'html.parser')
     token = soup.find('meta', {'name': 'csrf-token'})['content']
     return token
